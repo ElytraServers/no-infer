@@ -2,7 +2,7 @@
 
 Disable Redundant Type Argument Inspection for certain methods.
 
-<iframe width="245px" height="48px" src="https://plugins.jetbrains.com/embeddable/install/34210"></iframe>
+[![](docs/marketplace.png)](https://plugins.jetbrains.com/plugin/34210-no-infer)
 
 ## Usage
 
