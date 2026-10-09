@@ -1,0 +1,40 @@
+name: Publish Annotation
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version to publish, must be unique"
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup JDK
+        uses: actions/setup-java@v6
+        with:
+          java-version: |
+            8
+            17
+          distribution: 'zulu'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Build with Gradle
+        run: ./gradlew :no-infer-annotation:build
+
+      - name: Publish to Maven Central
+        run: './gradlew :no-infer-annotation:publishToMavenCentral -Pversion="${{ inputs.version }}"'
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MC_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MC_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGN_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.SIGN_KEY_ID }}

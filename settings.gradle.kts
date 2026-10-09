@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
 rootProject.name = "no-infer"
@@ -25,3 +27,5 @@ dependencyResolutionManagement {
         }
     }
 }
+
+includeBuild("no-infer-annotation")
