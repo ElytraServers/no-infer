@@ -37,11 +37,11 @@ mavenPublishing {
         name = "NoInfer Annotation"
         description = "@NoInfer annotation for NoInfer IDEA plugin."
         inceptionYear = "2026"
-        url = "https://github.com/Taskeren/no-infer"
+        url = "https://github.com/ElytraServers/no-infer"
         licenses {
             license {
                 name = "MIT"
-                url = "https://github.com/Taskeren/no-infer/blob/master/LICENSE"
+                url = "https://github.com/ElytraServers/no-infer/blob/master/LICENSE"
             }
         }
         developers {
@@ -52,9 +52,9 @@ mavenPublishing {
             }
         }
         scm {
-            url = "https://github.com/Taskeren/no-infer"
-            connection = "scm:git:git://github.com/Taskeren/no-infer.git"
-            developerConnection = "scm:git:ssh://github.com/Taskeren/no-infer.git"
+            url = "https://github.com/ElytraServers/no-infer"
+            connection = "scm:git:git://github.com/ElytraServers/no-infer.git"
+            developerConnection = "scm:git:ssh://github.com/ElytraServers/no-infer.git"
         }
     }
 }
